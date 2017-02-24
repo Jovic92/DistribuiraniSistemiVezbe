@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 rel. 3 (x64) (http://www.altova.com) by PMF (University of Novi Sad) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="message">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="requestMsg">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="student">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ime" type="xs:string"/>
+										<xs:element name="prezime" type="xs:string"/>
+										<xs:element name="brIndeksa" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="predmet" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="responseMsg">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="detaljiIspita">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="brojPoena" type="xs:int"/>
+										<xs:element name="ocena" type="xs:int"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="errorMsg" type="xs:string"/>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
