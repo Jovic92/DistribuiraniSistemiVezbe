@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IspitnaPrijava xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="IspitnaPrijavaSchema.xsd">
+	<popunjavaStudent>
+		<brIndexa>103/11</brIndexa>
+		<Departman>Matematiku i Informatiku</Departman>
+		<StepenStudija>Diplomske</StepenStudija>
+		<StudijskiProgram>Osnovne studije - Informatika</StudijskiProgram>
+		<Plan>2010/2011</Plan>
+		<IspitniRok>junskom</IspitniRok>
+		<Student>
+			<PrezimeStudenta>Janković</PrezimeStudenta>
+			<ImeStudenta>Janko</ImeStudenta>
+		</Student>
+		<NacinFinansiranja>budzet</NacinFinansiranja>
+		<Predmet>XML Markup jezici</Predmet>
+		<Profesor>
+			<ImeProfesora>Petar</ImeProfesora>
+			<Prezime>Petrović</Prezime>
+		</Profesor>
+		<BrojPolaganja>prvi put</BrojPolaganja>
+		<DatumPrijave>2012-10-15</DatumPrijave>
+		<Potpis>Janko Janković</Potpis>
+	</popunjavaStudent>
+	<popunjavaProfesor>
+		<PolozenPredmet>XML Markup jezici</PolozenPredmet>
+		<Rezultat>
+			<BrojPoena>100</BrojPoena>
+			<Ocena>1o (deset)</Ocena>
+		</Rezultat>
+		<sifra>I110</sifra>
+		<FondCasova>2+0+3</FondCasova>
+		<ESPB>7</ESPB>
+		<DatumPolaganja>2012-10-24</DatumPolaganja>
+		<PotpisNastavnika>Petrović Petar</PotpisNastavnika>
+	</popunjavaProfesor>
+</IspitnaPrijava>

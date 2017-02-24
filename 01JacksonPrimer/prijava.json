@@ -1,0 +1,16 @@
+{ "student":{ "ime":"Milan",
+			  "prezime":"Jovic",
+			  "brojIndeksa":"24D/16",
+			  "smer":"IT"
+	  		},
+    "predmet":{
+    	"naziv":"Distribuirani sistemi",
+    	"profesor":["Danijela Boberic", "Milan Jovic"],
+    	"brojIzlazaka":1
+    },
+    "ispit":{
+    	"datum":"2015-10-15",
+    	"brojPoena":100,
+    	"ocena":10
+    }
+}

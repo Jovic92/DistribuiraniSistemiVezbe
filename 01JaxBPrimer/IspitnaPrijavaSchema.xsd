@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="IspitnaPrijava">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="popunjavaStudent">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="brIndexa">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="6"/>
+										<xs:pattern value="[0-9]{3}[/][0-9]{2}"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Departman">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Matematiku i Informatiku"/>
+										<xs:enumeration value="Fiziku"/>
+										<xs:enumeration value="Biologiju"/>
+										<xs:enumeration value="Geografiju i hotelijerstvo"/>
+										<xs:enumeration value="Hemiju"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="StepenStudija">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Osnovne"/>
+										<xs:enumeration value="Diplomske"/>
+										<xs:enumeration value="Doktorske"/>
+										<xs:enumeration value="Specijalističke"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="StudijskiProgram">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Osnovne studije - Matematika"/>
+										<xs:enumeration value="Osnovne studije - Primenjena Matematika"/>
+										<xs:enumeration value="Osnovne studije - Informatika"/>
+										<xs:enumeration value="Master studije - Matematika"/>
+										<xs:enumeration value="Master studije - Primenjena Matematika"/>
+										<xs:enumeration value="Master studije - Informatika"/>
+										<xs:enumeration value="Doktorske studije - Informatika"/>
+										<xs:enumeration value="Doktorske studije - Matematika"/>
+										<xs:enumeration value="Biolog"/>
+										<xs:enumeration value="Diplomirani biolog - Master"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Plan">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="9"/>
+										<xs:pattern value="[0-9]{4}[/][0-9]{4}"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="IspitniRok">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="januarskom"/>
+										<xs:enumeration value="aprilskom"/>
+										<xs:enumeration value="junskom"/>
+										<xs:enumeration value="septembarskom"/>
+										<xs:enumeration value="oktobar I"/>
+										<xs:enumeration value="oktobar II"/>
+										<xs:enumeration value="oktobar III"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Student">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PrezimeStudenta" type="xs:string"/>
+										<xs:element name="ImeStudenta" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NacinFinansiranja">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="budzet"/>
+										<xs:enumeration value="samofinansiranje"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Predmet" type="xs:string"/>
+							<xs:element name="Profesor">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ImeProfesora" type="xs:string"/>
+										<xs:element name="Prezime" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="BrojPolaganja" type="xs:string"/>
+							<xs:element name="DatumPrijave" type="xs:date"/>
+							<xs:element name="Potpis" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="popunjavaProfesor">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PolozenPredmet"/>
+							<xs:element name="Rezultat">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="BrojPoena">
+											<xs:simpleType>
+												<xs:restriction base="xs:int">
+													<xs:minInclusive value="1"/>
+													<xs:maxInclusive value="100"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Ocena" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="sifra" type="xs:string"/>
+							<xs:element name="FondCasova">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="5"/>
+										<xs:pattern value="[0-9]{1}[+][0-9]{1}[+][0-9]{1}"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="ESPB">
+								<xs:simpleType>
+									<xs:restriction base="xs:int">
+										<xs:minInclusive value="1"/>
+										<xs:maxInclusive value="9"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="DatumPolaganja" type="xs:date"/>
+							<xs:element name="PotpisNastavnika" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
