@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log timestamp="2015-05-09T13:03:05.519"
+    xmlns="http://www.ws-i.org/testing/2004/07/log/"
+    xmlns:wsi-monConfig="http://www.ws-i.org/testing/2004/07/monitorConfig/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <monitor version="1.0" releaseDate="2003-03-20">
+    <implementer name="IBM" location=""/>
+    <environment>
+      <runtime name="Java(TM) SE Runtime Environment" version="1.7.0_75-b13"/>
+      <operatingSystem name="Windows 7" version="6.1"/>
+      <xmlParser name="Apache Xerces" version="Xerces-J 2.9.1"/>
+    </environment>
+    <wsi-monConfig:configuration>
+    <wsi-monConfig:comment>Comment</wsi-monConfig:comment>
+      <wsi-monConfig:logFile replace="true" location="URL">
+      <wsi-monConfig:addStyleSheet href="null" type="null" />
+    </wsi-monConfig:logFile>
+      <wsi-monConfig:logDuration>600</wsi-monConfig:logDuration>
+      <wsi-monConfig:cleanupTimeoutSeconds>3</wsi-monConfig:cleanupTimeoutSeconds>
+      <wsi-monConfig:manInTheMiddle>
+      </wsi-monConfig:manInTheMiddle>
+    </wsi-monConfig:configuration>
+  </monitor>
+
+<messageEntry xsi:type="httpMessageEntry" ID="1" conversationID="1" type="request" timestamp="2015-05-09T13:01:07.349Z">
+<messageContent>GET /studentService/StudentPortTypes?wsdl HTTP/1.1&#xd;
+Content-Type: text/xml&#xd;
+Accept: */*&#xd;
+User-Agent: Apache CXF 2.6.5&#xd;
+Cache-Control: no-cache&#xd;
+Pragma: no-cache&#xd;
+Host: localhost:8888&#xd;
+Connection: keep-alive&#xd;
+&#xd;
+</messageContent>
+<senderHostAndPort>localhost:8888</senderHostAndPort>
+<receiverHostAndPort>localhost:8080</receiverHostAndPort>
+<httpHeaders>GET /studentService/StudentPortTypes?wsdl HTTP/1.1&#xd;
+Content-Type: text/xml&#xd;
+Accept: */*&#xd;
+User-Agent: Apache CXF 2.6.5&#xd;
+Cache-Control: no-cache&#xd;
+Pragma: no-cache&#xd;
+Host: localhost:8888&#xd;
+Connection: keep-alive&#xd;
+&#xd;
+</httpHeaders>
+</messageEntry>
+<messageEntry xsi:type="httpMessageEntry" ID="2" conversationID="1" type="response" timestamp="2015-05-09T13:01:07.362Z">
+<messageContent>part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;PronadjiStudentaFault&quot;&gt;
+    &lt;wsdl:part element=&quot;tns:pronadjiStudentaFault&quot; name=&quot;PronadjiStudentaFault&quot;&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:portType name=&quot;StudentPortTypes&quot;&gt;
+    &lt;wsdl:operation name=&quot;pronadjiStudenta&quot;&gt;
+      &lt;wsdl:input message=&quot;tns:pronadjiStudenta&quot; name=&quot;pronadjiStudenta&quot;&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message=&quot;tns:pronadjiStudentaResponse&quot; name=&quot;pronadjiStudentaResponse&quot;&gt;
+    &lt;/wsdl:output&gt;
+      &lt;wsdl:fault message=&quot;tns:PronadjiStudentaFault&quot; name=&quot;PronadjiStudentaFault&quot;&gt;
+    &lt;/wsdl:fault&gt;
+    &lt;/wsdl:operation&gt;
+  &lt;/wsdl:portType&gt;
+  &lt;wsdl:binding name=&quot;StudentServiceSoapBinding&quot; type=&quot;tns:StudentPortTypes&quot;&gt;
+    &lt;soap:binding style=&quot;document&quot; transport=&quot;http://schemas.xmlsoap.org/soap/http&quot;&gt;&lt;/soap:binding&gt;
+    &lt;wsdl:operation name=&quot;pronadjiStudenta&quot;&gt;
+      &lt;soap:operation soapAction=&quot;&quot; style=&quot;document&quot;&gt;&lt;/soap:operation&gt;
+      &lt;wsdl:input name=&quot;pronadjiStudenta&quot;&gt;
+        &lt;soap:body use=&quot;literal&quot;&gt;&lt;/soap:body&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output name=&quot;pronadjiStudentaResponse&quot;&gt;
+        &lt;soap:body use=&quot;literal&quot;&gt;&lt;/soap:body&gt;
+      &lt;/wsdl:output&gt;
+      &lt;wsdl:fault name=&quot;PronadjiStudentaFault&quot;&gt;
+        &lt;soap:fault name=&quot;PronadjiStudentaFault&quot; use=&quot;literal&quot;&gt;&lt;/soap:fault&gt;
+      &lt;/wsdl:fault&gt;
+    &lt;/wsdl:operation&gt;
+  &lt;/wsdl:binding&gt;
+  &lt;wsdl:service name=&quot;StudentService&quot;&gt;
+    &lt;wsdl:port binding=&quot;tns:StudentServiceSoapBinding&quot; name=&quot;StudentPortTypesImplPort&quot;&gt;
+      &lt;soap:address location=&quot;http://localhost:8080/studentService/StudentPortTypes&quot;&gt;&lt;/soap:address&gt;
+    &lt;/wsdl:port&gt;
+  &lt;/wsdl:service&gt;
+&lt;/wsdl:definitions&gt;ype&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element maxOccurs=&quot;unbounded&quot; ref=&quot;tns:student&quot;&gt;&lt;/xs:element&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+
+&lt;/xs:schema&gt;
+  &lt;/wsdl:types&gt;
+  &lt;wsdl:message name=&quot;pronadjiStudenta&quot;&gt;
+    &lt;wsdl:part element=&quot;tns:naziv_fakulteta&quot; name=&quot;fakultet&quot;&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;pronadjiStudentaResponse&quot;&gt;
+    &lt;wsdl:part element=&quot;tns:studenti&quot; name=&quot;studenti&quot;&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;PronadjiStudentaFault&quot;&gt;
+    &lt;wsdl:part element=&quot;tns:pronadjiStudentaFault&quot; name=&quot;PronadjiStudentaFault&quot;&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:portType name=&quot;StudentPortTypes&quot;&gt;
+    &lt;wsdl:operation name=&quot;pronadjiStudenta&quot;&gt;
+      &lt;wsdl:input message=&quot;tns:pronadjiStudenta&quot; name=&quot;pronadjiStudenta&quot;&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message=&quot;tns:pronadjiStudentaResponse&quot; name=&quot;pronadjiStudentaResponse&quot;&gt;
+    &lt;/wsdl:output&gt;
+      &lt;wsdl:fault message=&quot;tns:PronadjiStudentaFault&quot; name=&quot;PronadjiStudentaFault&quot;&gt;
+    &lt;/wsdl:fault&gt;
+    &lt;/wsdl:operation&gt;
+  &lt;/wsdl:portType&gt;
+  &lt;wsdl:binding name=&quot;StudentServiceSoapBinding&quot; type=&quot;tns:StudentPortTypes&quot;&gt;
+    &lt;soap:binding style=&quot;document&quot; transport=&quot;http://schemas.xmlsoap.org/soap/http&quot;&gt;&lt;/soap:binding&gt;
+    &lt;wsdl:operation name=&quot;pronadjiStudenta&quot;&gt;
+      &lt;soap:operation soapAction=&quot;&quot; style=&quot;document&quot;&gt;&lt;/soap:operation&gt;
+      &lt;wsdl:input name=&quot;pronadjiStudenta&quot;&gt;
+        &lt;soap:body use=&quot;literal&quot;&gt;&lt;/soap:body&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output name=&quot;pronadjiStudentaResponse&quot;&gt;
+        &lt;soap:body use=&quot;literal&quot;&gt;&lt;/soap:body&gt;
+      &lt;/wsdl:output&gt;
+      &lt;wsdl:fault name=&quot;PronadjiStudentaFault&quot;&gt;
+        &lt;soap:fault name=&quot;PronadjiStudentaFault&quot; use=&quot;literal&quot;&gt;&lt;/soap:fault&gt;
+      &lt;/wsdl:fault&gt;
+    &lt;/wsdl:operation&gt;
+  &lt;/wsdl:binding&gt;
+  &lt;wsdl:service name=&quot;StudentService&quot;&gt;
+    &lt;wsdl:port binding=&quot;tns:StudentServiceSoapBinding&quot; name=&quot;StudentPortTypesImplPort&quot;&gt;
+      &lt;soap:address location=&quot;http://localhost:8080/studentService/StudentPortTypes&quot;&gt;&lt;/soap:address&gt;
+    &lt;/wsdl:port&gt;
+  &lt;/wsdl:service&gt;
+&lt;/wsdl:definitions&gt;</messageContent>
+<senderHostAndPort>localhost:8080</senderHostAndPort>
+<receiverHostAndPort>localhost:8888</receiverHostAndPort>
+<httpHeaders>part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;PronadjiStudentaFault&quot;&gt;
+    &lt;wsdl:part element=&quot;tns:pronadjiStudentaFault&quot; name=&quot;PronadjiStudentaFault&quot;&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:portType name=&quot;StudentPortTypes&quot;&gt;
+    &lt;wsdl:operation name=&quot;pronadjiStudenta&quot;&gt;
+      &lt;wsdl:input message=&quot;tns:pronadjiStudenta&quot; name=&quot;pronadjiStudenta&quot;&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message=&quot;tns:pronadjiStudentaResponse&quot; name=&quot;pronadjiStudentaResponse&quot;&gt;
+    &lt;/wsdl:output&gt;
+      &lt;wsdl:fault message=&quot;tns:PronadjiStudentaFault&quot; name=&quot;PronadjiStudentaFault&quot;&gt;
+    &lt;/wsdl:fault&gt;
+    &lt;/wsdl:operation&gt;
+  &lt;/wsdl:portType&gt;
+  &lt;wsdl:binding name=&quot;StudentServiceSoapBinding&quot; type=&quot;tns:StudentPortTypes&quot;&gt;
+    &lt;soap:binding style=&quot;document&quot; transport=&quot;http://schemas.xmlsoap.org/soap/http&quot;&gt;&lt;/soap:binding&gt;
+    &lt;wsdl:operation name=&quot;pronadjiStudenta&quot;&gt;
+      &lt;soap:operation soapAction=&quot;&quot; style=&quot;document&quot;&gt;&lt;/soap:operation&gt;
+      &lt;wsdl:input name=&quot;pronadjiStudenta&quot;&gt;
+        &lt;soap:body use=&quot;literal&quot;&gt;&lt;/soap:body&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output name=&quot;pronadjiStudentaResponse&quot;&gt;
+        &lt;soap:body use=&quot;literal&quot;&gt;&lt;/soap:body&gt;
+      &lt;/wsdl:output&gt;
+      &lt;wsdl:fault name=&quot;PronadjiStudentaFault&quot;&gt;
+        &lt;soap:fault name=&quot;PronadjiStudentaFault&quot; use=&quot;literal&quot;&gt;&lt;/soap:fault&gt;
+      &lt;/wsdl:fault&gt;
+    &lt;/wsdl:operation&gt;
+  &lt;/wsdl:binding&gt;
+  &lt;wsdl:service name=&quot;StudentService&quot;&gt;
+    &lt;wsdl:port binding=&quot;tns:StudentServiceSoapBinding&quot; name=&quot;StudentPortTypesImplPort&quot;&gt;
+      &lt;soap:address location=&quot;http://localhost:8080/studentService/StudentPortTypes&quot;&gt;&lt;/soap:address&gt;
+    &lt;/wsdl:port&gt;
+  &lt;/wsdl:service&gt;
+&lt;/wsdl:definitions&gt;ype&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element maxOccurs=&quot;unbounded&quot; ref=&quot;tns:student&quot;&gt;&lt;/xs:element&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+
+&lt;/xs:schema&gt;
+  &lt;/wsdl:types&gt;
+  &lt;wsdl:message name=&quot;pronadjiStudenta&quot;&gt;
+    &lt;wsdl:part element=&quot;tns:naziv_fakulteta&quot; name=&quot;fakultet&quot;&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;pronadjiStudentaResponse&quot;&gt;
+    &lt;wsdl:part element=&quot;tns:studenti&quot; name=&quot;studenti&quot;&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;PronadjiStudentaFault&quot;&gt;
+    &lt;wsdl:part element=&quot;tns:pronadjiStudentaFault&quot; name=&quot;PronadjiStudentaFault&quot;&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:portType name=&quot;StudentPortTypes&quot;&gt;
+    &lt;wsdl:operation name=&quot;pronadjiStudenta&quot;&gt;
+      &lt;wsdl:input message=&quot;tns:pronadjiStudenta&quot; name=&quot;pronadjiStudenta&quot;&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message=&quot;tns:pronadjiStudentaResponse&quot; name=&quot;pronadjiStudentaResponse&quot;&gt;
+    &lt;/wsdl:output&gt;
+      &lt;wsdl:fault message=&quot;tns:PronadjiStudentaFault&quot; name=&quot;PronadjiStudentaFault&quot;&gt;
+    &lt;/wsdl:fault&gt;
+    &lt;/wsdl:operation&gt;
+  &lt;/wsdl:portType&gt;
+  &lt;wsdl:binding name=&quot;StudentServiceSoapBinding&quot; type=&quot;tns:StudentPortTypes&quot;&gt;
+    &lt;soap:binding style=&quot;document&quot; transport=&quot;http://schemas.xmlsoap.org/soap/http&quot;&gt;&lt;/soap:binding&gt;
+    &lt;wsdl:operation name=&quot;pronadjiStudenta&quot;&gt;
+      &lt;soap:operation soapAction=&quot;&quot; style=&quot;document&quot;&gt;&lt;/soap:operation&gt;
+      &lt;wsdl:input name=&quot;pronadjiStudenta&quot;&gt;
+        &lt;soap:body use=&quot;literal&quot;&gt;&lt;/soap:body&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output name=&quot;pronadjiStudentaResponse&quot;&gt;
+        &lt;soap:body use=&quot;literal&quot;&gt;&lt;/soap:body&gt;
+      &lt;/wsdl:output&gt;
+      &lt;wsdl:fault name=&quot;PronadjiStudentaFault&quot;&gt;
+        &lt;soap:fault name=&quot;PronadjiStudentaFault&quot; use=&quot;literal&quot;&gt;&lt;/soap:fault&gt;
+      &lt;/wsdl:fault&gt;
+    &lt;/wsdl:operation&gt;
+  &lt;/wsdl:binding&gt;
+  &lt;wsdl:service name=&quot;StudentService&quot;&gt;
+    &lt;wsdl:port binding=&quot;tns:StudentServiceSoapBinding&quot; name=&quot;StudentPortTypesImplPort&quot;&gt;
+      &lt;soap:address location=&quot;http://localhost:8080/studentService/StudentPortTypes&quot;&gt;&lt;/soap:address&gt;
+    &lt;/wsdl:port&gt;
+  &lt;/wsdl:service&gt;
+&lt;/wsdl:definitions&gt;</httpHeaders>
+</messageEntry>
+</log>

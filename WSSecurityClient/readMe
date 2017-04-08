@@ -1,0 +1,13 @@
+
+
+Kako izgenerisati i razmeniti sertifikate
+
+generisanje ključeva i sertifikata
+
+keytool -genkeypair -alias server -keyalg RSA -keysize 2048 -sigalg SHA256withRSA -keypass server2014 -validity 365 -storepass nastava -keystore serverKeystore.jks
+
+eksportovanje certifikata 
+keytool -keystore serverKeystore.jks -alias server -file server.cer -exportcert
+
+importovanje certifikata
+keytool -importcert -alias server -keypass server2014 -keystore clientKeystore.jks -file server.cer
